@@ -12,8 +12,10 @@ class RadarrAPI():
 
     def __init__(self):
         #Establece valores predeterminados (api_key de Radarr y la ip de la máquina que lo hostea)
-        self.tracker_list = ["udp://tracker.coppersurfer.tk:6969/announce","udp://tracker.opentrackr.org:1337/announce","udp://9.rarbg.to:2710/announce","udp://9.rarbg.me:2710/announce","udp://tracker.leechers-paradise.org:6969/announce","udp://tracker.cyberia.is:6969/announce","udp://exodus.desync.com:6969/announce","http://tracker.internetwarriors.net:1337/announce","udp://explodie.org:6969/announce","udp://tracker3.itzmx.com:6961/announce","http://tracker1.itzmx.com:8080/announce","udp://tracker.tiny-vps.com:6969/announce","udp://tracker.torrent.eu.org:451/announce","udp://tracker.ds.is:6969/announce","udp://open.stealth.si:80/announce","http://open.acgnxtracker.com:80/announce","udp://retracker.lanta-net.ru:2710/announce","http://tracker4.itzmx.com:2710/announce","udp://tracker.moeking.me:6969/announce","udp://ipv4.tracker.harry.lu:80/announce"]
-        
+        trackers_site = requests.get("https://cdn.staticaly.com/gh/XIU2/TrackersListCollection/master/best.txt")
+        trackers_data = trackers_site.text
+        self.tracker_list = trackers_data.split("\n")
+
         self.host_ip = "hal9000-server.ddns.net"
         self.radarr_port = "7878"
 

@@ -10,6 +10,7 @@ import requests
 import shutil
 import logging
 import requests, socket
+import os
 
 def get_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -587,4 +588,4 @@ async def on_message(message):
         await message.channel.send(embed=embed)
 
 
-client.run('NzEzNTc0NDIzMTM0NzMyMzE5.XsiF-A.1j9qsni_zl8Uzr6taQ9Vd04v9Ug')
+client.run(os.getenv('DISCORD'))

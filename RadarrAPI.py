@@ -5,6 +5,7 @@ from random import random
 from threading import Timer
 import threading 
 import json
+import os
 
 class RadarrAPI():
 
@@ -17,7 +18,7 @@ class RadarrAPI():
         self.radarr_port = "7878"
 
         self.host = 'http://{ip}:{port}/api/v3/'.format(ip = self.host_ip, port = self.radarr_port)
-        self.api_key = 'ad75fbd5dadf4114956fa0084a66c6f1'
+        self.api_key = os.getenv("RADARR")
         self.api_key = 'apikey=' + self.api_key
         self.failed_search = False
 

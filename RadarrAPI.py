@@ -293,4 +293,3 @@ class RadarrAPI():
         #7) El link magnético está listo para ser enviado al usuario
         return final_magnet, past_film_id, movie_data, movie_image, size, hash_code[0] 
 
-    

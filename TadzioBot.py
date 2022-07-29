@@ -27,9 +27,6 @@ def get_ip():
 
 
 client = discord.Client()
-file2write=open("last_movie_id.txt",'w')
-file2write.write("0")
-file2write.close()
 
 logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
